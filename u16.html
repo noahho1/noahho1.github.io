@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UCC Hockey</title>
+  		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+     	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+     	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<style>
+	
+ /* label color */
+   .input-field label {
+     color: #bdbdbd;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #bdbdbd;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #bdbdbd;
+     box-shadow: 0 1px 0 0 #bdbdbd;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #bdbdbd;
+     box-shadow: 0 1px 0 0 #bdbdbd;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #bdbdbd;
+     box-shadow: 0 1px 0 0 #bdbdbd;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #bdbdbd;
+   }
+
+</style>
+<!--Navbar-->
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper indigo darken-4">
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="index.html">U14</a></li>
+        <li><a href="u16.html">U16</a></li>
+        <li><a href="jv.html">Tier 1B</a></li>
+        <li><a href="varsity.html">Varsity</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!--intro writing blurb-->
+  <div class="row">
+    
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/U16.png">
+          <span class="card-title indigo darken-4">U16 Hockey</span>
+        </div>
+        <div class="card-content">
+          <p>The U16 Hockey team managed to put things together yesterday as hosts for the U16 Final Four Championship. The Blues first defeated St. Andrew's College 6-3 in the semifinal, setting up another encounter with Crescent School. Both games with Crescent during the regular season ended up in ties. The team knew that they would have to play their best game of the year to win the CISAA Championship. The Blues got out to an early 3-0 lead but Crescent did not quit. In the end, the U16 team won the game 4-2 on an empty net goal, sealing the CISAA Championship. Congratulations to the team on a terrific year which saw them lose only one game.</p>
+        </div>
+        <div class="card-action">
+        </div>
+      </div>
+    </div>
+
+
+  <div class="row">
+    <div class="col s13 m7 l100">
+  <div class="carousel carousel-slider">
+    <a href="#one!" class="carousel-item" ><img src="./images/U16S1.JPG"></a>
+    <a href="#two!" class="carousel-item" ><img src="./images/U16S2.png"></a>
+  </div>
+</div>
+</div>
+
+
+    
+<!--coaches information card-->
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card grey lighten-1">
+        <div class="card-image">
+          <img src="./images/U16C1.png">
+          <img src="./images/U16C2.png">
+        </div>
+        <div class="card-content">
+        <h5 class="indigo darken-4 white-text">Coaches</h5>
+          <h6 class="black-text">Head Coach: Brant McKay</h6>
+          <p>Email: bmckay@ucc.on.ca</p>
+          <h6 class="black-text">Assistant Coach: Kent Hutton</h6>
+          <p>Email: khutton@ucc.on.ca</p>
+        </div>
+        <div class="card-action">
+        </div>
+      </div>
+    </div>
+
+
+
+
+<!-- Firebase question entery-->
+       <div class="row">
+            <form class="col s12 m6 l00">
+                <div class="card">
+                  <img src="./images/crest.png">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">First Name</label>
+                    </div>
+                   
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">border_color</i>
+                        <input id="icon_question" type="text" class="validate">
+                        <label for="icon_question">Write a Question to the Coaches</label>
+                    </div>
+                 	<div class = "row center">
+                    <a id = "submit" class="waves-effect waves-light btn indigo darken-4">Submit</a>
+
+
+                    </div>
+                </div>
+                   </div>
+          </form>
+ </div>
+            
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCfwCcrL54dOy-U6kaorimm5sFwH9dDv1Y",
+    authDomain: "project-2-data-110c3.firebaseapp.com",
+    databaseURL: "https://project-2-data-110c3-default-rtdb.firebaseio.com",
+    projectId: "project-2-data-110c3",
+    storageBucket: "project-2-data-110c3.appspot.com",
+    messagingSenderId: "715994762262",
+    appId: "1:715994762262:web:7829964afd3b65417df937",
+    measurementId: "G-LJMG8S2WLS"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  firebase.database();
+  var database = firebase.database();
+</script>
+
+<script>
+        // Your web app's Firebase configuration
+
+
+
+             //on the submit button click, run function (arrow function)
+                document.getElementById("submit").onclick = () => {
+
+
+            // Create a reference to a particular location or "node" called reviews
+            var ref = database.ref('questions');
+
+            // Grab and store the Name, username, numerical rating and review from the HTML frontend textboxes
+            var name = document.getElementById("icon_prefix").value;
+  
+            var question= document.getElementById("icon_question").value;
+            
+
+            // Create a JSON object to add to the database with user-inputted data
+            var data = {
+                name: name,
+                question: question
+            }
+            // "PUSH" means we add something to the database
+            ref.push(data);
+
+            alert("Question Submited!");    
+            //alerts the user that the review is submitted
+}
+
+
+
+  // script code for slideshow
+
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+
+
+
+</script>
+</body>
+</html>
